@@ -1,0 +1,56 @@
+package kodlama.io.language.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.language.business.abstracts.LanguageService;
+import kodlama.io.language.dataAccess.abstracts.LanguageRepository;
+import kodlama.io.language.entities.concretes.Language;
+
+public class LanguageManager implements LanguageService {
+
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+
+		this.languageRepository = languageRepository;
+	}
+
+	@Override
+	public List<Language> getAll() {
+		// iş kuralları
+		return languageRepository.getAll();
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+
+		for (Language language2 : languageRepository.getAll()) {
+			if (language.getName().equalsIgnoreCase(language2.getName()))
+				throw new Exception("");
+		}
+		this.languageRepository.add(language);
+	}
+
+	@Override
+	public void update(Language language) {
+
+		for (Language language2 : languageRepository.getAll()) {
+			if (language2.getId() == language.getId()) {
+				languageRepository.update(language language.getId());
+			}
+		}
+	}
+
+	@Override
+	public void delete(Language language) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Language getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

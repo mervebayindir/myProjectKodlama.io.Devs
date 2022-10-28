@@ -1,0 +1,16 @@
+package kodlama.io.language.business.abstracts;
+
+import java.util.List;
+
+import kodlama.io.language.entities.concretes.Language;
+
+public interface LanguageService {
+	List<Language> getAll();
+	void add(Language language);
+	void update(Language language);
+	void delete(Language language);
+	Language getById(int id);
+	
+	// add
+//	
+}

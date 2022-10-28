@@ -1,0 +1,104 @@
+package kodlama.io.language.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.language.business.abstracts.LanguageService;
+import kodlama.io.language.dataAccess.abstracts.LanguageRepository;
+import kodlama.io.language.entities.concretes.Language;
+
+public class LanguageManager implements LanguageService {
+	
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+
+		this.languageRepository = languageRepository;
+	}
+
+	@Override
+	public List<Language> getAll() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Language language) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Language language) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Language getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+//	@Override
+//	public List<Language> getAll() {
+//		// iş kuralları
+//	  return languageRepository.getAll();
+//	}
+//	
+//	@Override
+//	public void add(Language language) throws Exception {
+//		if (isNameExist(language))
+//			throw new Exception("Programlama dili tekrar edemez..!");
+//		if (language.getName().isEmpty()) {
+//			throw new Exception("Programlama dili boş bırakılamaz");
+//		}
+//		this.languageRepository.add(language);
+//		
+//	}
+//
+//	@Override
+//	public void update(Language language) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void delete(Language language) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public Language getById(int id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	public boolean isNameExist(Language language) {
+//		for (Language language2 : languageRepository.getAll()) {
+//			if (language.getName().equalsIgnoreCase(language2.getName())) {
+//				return true;
+//			}
+//		}
+//		return false;
+//
+//	}
+//
+//	public boolean isIdExist(int id) {
+//		for (Language language2 : languageRepository.getAll()) {
+//			if (language2.getId() == id) {
+//				return true;
+//			}
+//			return false;
+//		}
+//		return false;
+//
+//	}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="kodlama.io.language.business.abstracts.LanguageService"/>
+    <fullyQualifiedTypeName name="kodlama.io.language.entities.concretes.Language"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="net.bytebuddy.matcher.IsNamedMatcher"/>
+    <fullyQualifiedTypeName name="kodlama.io.language.dataAccess.abstracts.LanguageRepository"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,5 @@
+package kodlama.io.language.dataAccess.concretes;
+
+public class InMemoryBrandRepository implements BrandRepository {
+	
+}

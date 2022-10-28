@@ -1,0 +1,71 @@
+package kodlama.io.language.business.concretes;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kodlama.io.language.business.abstracts.LanguageService;
+import kodlama.io.language.dataAccess.abstracts.LanguageRepository;
+import kodlama.io.language.entities.concretes.Language;
+
+@Service
+public class LanguageManager implements LanguageService {
+
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+
+		this.languageRepository = languageRepository;
+	}
+
+
+	@Override
+	public List<Language> getAll() {
+		return languageRepository.getAll();
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+		if(isIdExist(language.getId())) throw new Exception("Id tekrar edemez");
+		if (isNameExist(language)) throw new Exception("Programlama dilleri tekrar edemez..!");
+		
+	}
+
+	@Override
+	public void update(Language language, int id) throws Exception {
+		if (!isIdExist(language.getId())) throw new Exception("Id bulunamadı.");
+		if (isNameExist(language)) throw new Exception("Programlama dili tekrar edilemez..!");
+		languageRepository.update(language, id);
+	}
+
+	@Override
+	public void delete(int id) throws Exception {
+		if (!isIdExist(id)) throw new Exception("Id bulumadı..!");
+		languageRepository.delete(id);
+		
+	}
+
+	@Override
+	public Language getById(int id) throws Exception {
+		if (!isIdExist(id)) throw new Exception("Id bulunamadı.");
+		languageRepository.getById(id);
+		
+	}
+	
+public boolean isNameExist(Language language){
+        for(Language language1: getAll()){
+            if(language.getName().equalsIgnoreCase(language1.getName())){
+                return true;
+            }
+        }return false;
+
+    }
+    public boolean isIdExist(int id){
+        for (Language language1: getAll()){
+            if (language1.getId()==id){
+                return true;
+            }
+        }return false;
+
+    }
+}
